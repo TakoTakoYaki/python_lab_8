@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Пользователь {{ user.name }} — {{ app.name }}</title>
+  </head>
+  <body class="container py-4">
+    <h1>Пользователь: {{ user.name }}</h1>
+
+    <h2>Подписки на валюты</h2>
+    {% if currencies %}
+      <ul>
+        {% for c in currencies %}
+          <li>
+            {{ c.char_code }} — {{ c.value }} ₽ за {{ c.nominal }}
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>Пользователь пока не подписан ни на одну валюту.</p>
+    {% endif %}
+
+    <!-- здесь потом можно вставить график динамики для самостоятельной части -->
+
+    <p><a href="/users">К списку пользователей</a></p>
+    <p><a href="/currencies">К списку валют</a></p>
+  </body>
+</html>

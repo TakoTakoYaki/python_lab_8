@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Курсы валют — {{ app.name }}</title>
+  </head>
+  <body class="container py-4">
+    <h1>Курсы валют</h1>
+
+    <table border="1" cellpadding="5">
+      <tr>
+        <th>Код</th>
+        <th>Название</th>
+        <th>Курс</th>
+        <th>Номинал</th>
+      </tr>
+      {% for c in currencies %}
+      <tr>
+        <td>{{ c.char_code }}</td>
+        <td>{{ c.name or "" }}</td>
+        <td>{{ "%.4f"|format(c.value) }}</td>
+        <td>{{ c.nominal }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+
+    <p><a href="/">На главную</a></p>
+  </body>
+</html>
