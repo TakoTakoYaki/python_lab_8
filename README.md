@@ -314,6 +314,7 @@ self.assertIn("Алиса", html)
 self.assertIn("/user?id=1", html)
 ```
 Скриншот
+
 ![test.jpg](img%2Ftest.jpg)
 
 ### 8. Выводы
